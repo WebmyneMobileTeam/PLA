@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    tools:context="com.webmyne.paylabas.userapp.user_navigation.Setting">
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+    <!--<TextView-->
+        <!--android:fontFamily="sans-serif-condensed"-->
+        <!--android:text="Email Address"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#494949"-->
+        <!--android:textSize="22sp" />-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@color/paylabas_dkgrey"></View>-->
+
+    <!--<LinearLayout-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="abc@abc.com"-->
+            <!--android:id="@+id/txtEmail"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<com.gc.materialdesign.views.ButtonFlat-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:id="@+id/btnUpdateEmail"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:text="Update"-->
+            <!--android:layout_weight="2" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<TextView-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:fontFamily="sans-serif-condensed"-->
+        <!--android:text="Mobile Number"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#494949"-->
+        <!--android:textSize="22sp" />-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@color/paylabas_dkgrey"></View>-->
+
+    <!--<LinearLayout-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="+119687203190"-->
+            <!--android:id="@+id/txtMobile"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<com.gc.materialdesign.views.ButtonFlat-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:id="@+id/btnUpdateMobile"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:text="Update"-->
+            <!--android:layout_weight="2" />-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--<com.gc.materialdesign.views.ButtonFlat-->
+        <!--android:id="@+id/btnChangePassword"-->
+        <!--android:fontFamily="sans-serif-condensed"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:text="Change Password">-->
+    <!--</com.gc.materialdesign.views.ButtonFlat>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/verfiyLayout"-->
+        <!--android:padding="@dimen/activity_horizontal_margin"-->
+        <!--android:background="@drawable/ed_rounded"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<LinearLayout-->
+           <!--android:paddingBottom="16dp"-->
+            <!--android:paddingLeft="16dp"-->
+            <!--android:paddingRight="16dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:fontFamily="sans-serif-condensed"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Enter verification code that sent to your mobile"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/paylabas_blue"-->
+                <!--android:id="@+id/msg"-->
+                <!--android:textSize="18sp" />-->
+            <!--<EditText-->
+
+                <!--android:fontFamily="sans-serif-condensed"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="verification code"-->
+                <!--android:textSize="18sp"-->
+                <!--android:gravity="left"-->
+                <!--style="@style/MyEdittext"-->
+                <!--android:id="@+id/edVerificationCode"-->
+                <!--android:padding="8dp" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+                <!--<com.gc.materialdesign.views.ButtonRectangle-->
+                    <!--android:id="@+id/btnVerify"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="48dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text = "VERIFY"-->
+                    <!--android:background="@color/paylabas_blue"/>-->
+            <!--</RelativeLayout>-->
+
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+<!--</LinearLayout>-->
+    <!--</ScrollView>-->
+</LinearLayout>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/PLA.iml" filepath="$PROJECT_DIR$/PLA.iml" />
       <module fileurl="file://$PROJECT_DIR$/PayLabas-Affiliate.iml" filepath="$PROJECT_DIR$/PayLabas-Affiliate.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/materialDesign/materialDesign.iml" filepath="$PROJECT_DIR$/materialDesign/materialDesign.iml" />
