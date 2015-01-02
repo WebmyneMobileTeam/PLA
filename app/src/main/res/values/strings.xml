@@ -90,6 +90,7 @@
 
     <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
     <string name="skip_button_label">Skip</string>
+    <string name="family">sans-serif-condensed</string>
 
 
 
