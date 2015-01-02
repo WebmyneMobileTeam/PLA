@@ -106,7 +106,7 @@ public class DatabaseWrapper extends SQLiteOpenHelper {
 
         state_obj = new ArrayList<State>();
         Cursor c = null;
-     //   return mDb.rawQuery("SELECT * FROM myTable WHERE column1 = "+ someValue, null);
+     // return mDb.rawQuery("SELECT * FROM myTable WHERE column1 = "+ someValue, null);
 
         String query = "select * from state where CountryID = ";
         c = myDataBase.rawQuery(query+CountryID,null);
