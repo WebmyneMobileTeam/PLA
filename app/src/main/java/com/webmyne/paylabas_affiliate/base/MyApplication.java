@@ -8,7 +8,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.Volley;
 
-
 /**
  * Application class that called once when application is installed for the first time on device.
  * This class includes the integration of Volly [third party framework for calling webservices]
@@ -40,6 +39,7 @@ public class MyApplication extends Application {
         super.onCreate();
         // initialize the singleton
         sInstance = this;
+
       /*  CustomTypeface.getInstance().registerTypeface("rbold", getAssets(), "RBold.ttf");
         CustomTypeface.getInstance().registerTypeface("rnormal", getAssets(), "RRegular.ttf");
         CustomTypeface.getInstance().registerTypeface("rlight", getAssets(), "RLight.ttf");
@@ -68,6 +68,7 @@ public class MyApplication extends Application {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         }
+
         return mRequestQueue;
     }
 
@@ -105,6 +106,7 @@ public class MyApplication extends Application {
      *
      * @param tag
      */
+
     public void cancelPendingRequests(Object tag) {
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(tag);
