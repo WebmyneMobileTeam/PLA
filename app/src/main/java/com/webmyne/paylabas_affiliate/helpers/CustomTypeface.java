@@ -32,7 +32,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.webmyne.paylabas_user.R;
+
+import com.webmyne.paylabas_affiliate.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -7,7 +7,8 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.webmyne.paylabas.userapp.base.MyApplication;
+import com.webmyne.paylabas_affiliate.base.MyApplication;
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;
