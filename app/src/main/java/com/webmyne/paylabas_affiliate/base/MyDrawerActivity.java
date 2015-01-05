@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.helpers.AppUtils;
 import com.webmyne.paylabas_affiliate.user_navigation.Aboutus;
@@ -30,7 +29,7 @@ import com.webmyne.paylabas_affiliate.user_navigation.Contactus;
 import com.webmyne.paylabas_affiliate.user_navigation.FAQ;
 import com.webmyne.paylabas_affiliate.user_navigation.How_it_Works;
 import com.webmyne.paylabas_affiliate.user_navigation.Setting;
-
+import com.webmyne.paylabas_affiliate.user_navigation.ToolsFragment;
 
 public class MyDrawerActivity extends ActionBarActivity {
 
@@ -43,8 +42,8 @@ public class MyDrawerActivity extends ActionBarActivity {
     private String[] leftSliderData = {"Home", "Tools", "Reports", "About Us", "Contact Us", "How It Works", "FAQ", "Settings", "Logout"};
 
     private int[] imagelist = {R.drawable.icon_home,
-            R.drawable.icon_editprofile2,
-            R.drawable.icon_myrecipient,
+            R.drawable.ic_tool,
+            R.drawable.ic_reports,
             R.drawable.icon_aboutus,
             R.drawable.icon_contactus,
             R.drawable.icon_how_it_works,
@@ -130,14 +129,14 @@ public class MyDrawerActivity extends ActionBarActivity {
                         break;
                     case 1:
 
-//                        FragmentManager manager1 = getSupportFragmentManager();
-//                        FragmentTransaction ft1 = manager1.beginTransaction();
-//                        ft1.replace(R.id.main_container, new Profile());
-//                       // ft1.addToBackStack("");
-//                        ft1.commit();
-//                        for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
-//                            fm.popBackStack();
-//                        }
+                        FragmentManager manager1 = getSupportFragmentManager();
+                        FragmentTransaction ft1 = manager1.beginTransaction();
+                        ft1.replace(R.id.main_container, new ToolsFragment());
+                       // ft1.addToBackStack("");
+                        ft1.commit();
+                        for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+                            fm.popBackStack();
+                        }
                         break;
                     case 2:
 
