@@ -42,6 +42,7 @@ public class CurrencyCoverterFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = manager.beginTransaction();
+                ft.setCustomAnimations(R.anim.entry, R.anim.exit,R.anim.entry, R.anim.exit);
                 ft.replace(R.id.currency_covert_main, new CurrencyCovertVerification(), "c_convert_verify");
                 ft.addToBackStack("");
                 ft.commit();
