@@ -211,7 +211,7 @@
 
 
                 <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
-                    android:id="@+id/linearCashInOut"
+
                     android:layout_margin="1dp"
                     android:gravity="bottom"
                     android:background="@color/paylabas_dkgrey"
@@ -232,6 +232,7 @@
                         android:scaleType="centerCrop" />
 
                     <LinearLayout
+                        android:id="@+id/linearCashInOut"
                         android:background="@color/paylabas_dkgrey_t"
                         android:layout_gravity="bottom"
                         android:padding="4dp"

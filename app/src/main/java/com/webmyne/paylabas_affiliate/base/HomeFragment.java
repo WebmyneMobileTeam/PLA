@@ -3,6 +3,8 @@ package com.webmyne.paylabas_affiliate.base;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.webmyne.paylabas_affiliate.R;
+import com.webmyne.paylabas_affiliate.cash_in_out.Home_fragment_Cash_IN_OUT;
 import com.webmyne.paylabas_affiliate.custom_components.SquareLayout;
 
 
@@ -22,6 +25,8 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private LinearLayout linearGiftCode;
+    private LinearLayout linearCashInOut;
+
 
 
 
@@ -57,12 +62,18 @@ public class HomeFragment extends Fragment {
         linearGiftCode = (LinearLayout)convertView.findViewById(R.id.linearGiftCode);
         linearGiftCode.setOnClickListener(clickListner);
 
+        linearCashInOut = (LinearLayout)convertView.findViewById(R.id.linearCashInOut);
+        linearCashInOut.setOnClickListener(clickListner);
+
+
         return convertView;
     }
 
     public View.OnClickListener clickListner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            final FragmentManager fm = getActivity().getSupportFragmentManager();
+            final FragmentTransaction ft = fm.beginTransaction();
 
             switch (v.getId()){
 
@@ -72,15 +83,17 @@ public class HomeFragment extends Fragment {
 
                     break;
 
+                case R.id.linearCashInOut:
+                    ft.replace(R.id.main_container,new Home_fragment_Cash_IN_OUT(),"CASH_IN_OUT");
+                    ft.commit();
+                    for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+                        fm.popBackStack();
+                    }
+                    break;
 
-
-            }
-
-
-
-
+            }// end of switch
         }
     };
 
-
+// end of main class
 }

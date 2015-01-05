@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/back"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.webmyne.paylabas_affiliate.cash_in_out.Home_fragment_Cash_IN_OUT">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.webmyne.paylabas_affiliate.custom_components.PagerSlidingTabStrip
+            android:id="@+id/tabs_cash_in_out"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/paylabas_dkgrey"
+            app:pstsPaddingMiddle="true"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager_cash_in_out"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:context=".MainActivity"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
