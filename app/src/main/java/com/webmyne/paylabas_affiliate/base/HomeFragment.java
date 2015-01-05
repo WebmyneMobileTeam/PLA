@@ -15,6 +15,7 @@ import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.cash_in_out.Home_fragment_Cash_IN_OUT;
 import com.webmyne.paylabas_affiliate.custom_components.SquareLayout;
 import com.webmyne.paylabas_affiliate.giftcode.GiftCodeFragment;
+import com.webmyne.paylabas_affiliate.mobile_topup.MobiletopupFragment;
 
 
 public class HomeFragment extends Fragment {
@@ -27,6 +28,7 @@ public class HomeFragment extends Fragment {
 
     private LinearLayout linearGiftCode;
     private LinearLayout linearCashInOut;
+    private LinearLayout linearMobileTopup;
 
 
 
@@ -65,7 +67,8 @@ public class HomeFragment extends Fragment {
 
         linearCashInOut = (LinearLayout)convertView.findViewById(R.id.linearCashInOut);
         linearCashInOut.setOnClickListener(clickListner);
-
+        linearMobileTopup = (LinearLayout)convertView.findViewById(R.id.linearMobileTopup);
+        linearMobileTopup.setOnClickListener(clickListner);
 
         return convertView;
     }
@@ -101,6 +104,15 @@ public class HomeFragment extends Fragment {
                     for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                         fm.popBackStack();
                     }
+                    break;
+
+                case R.id.linearMobileTopup:
+                    ft.replace(R.id.main_container,new MobiletopupFragment(),"MOBILE_TOPUP");
+                    ft.commit();
+                    for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+                        fm.popBackStack();
+                    }
+
                     break;
 
             }// end of switch

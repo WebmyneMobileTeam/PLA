@@ -69,7 +69,7 @@ public class Verifiy_Cash_out_Fragment extends Fragment {
         View converview =  inflater.inflate(R.layout.fragment_verifiy_cashout, container, false);
 
         TextView btnVerify = (TextView)converview.findViewById(R.id.btnVerify);
-        TextView btnBack = (TextView)converview.findViewById(R.id.btnBack);
+
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

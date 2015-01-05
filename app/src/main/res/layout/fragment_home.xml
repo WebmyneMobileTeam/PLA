@@ -84,7 +84,7 @@
 
 
                 <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
-                    android:id="@+id/linearMobileTopup"
+
                     android:layout_margin="1dp"
 
                     android:gravity="bottom"
@@ -107,6 +107,7 @@
                         android:scaleType="centerCrop" />
 
                     <LinearLayout
+                        android:id="@+id/linearMobileTopup"
                         android:background="@color/color_mobiletopup_t"
                         android:layout_gravity="bottom"
                         android:padding="4dp"

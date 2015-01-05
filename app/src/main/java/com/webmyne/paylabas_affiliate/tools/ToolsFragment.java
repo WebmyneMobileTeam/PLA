@@ -1,5 +1,6 @@
 package com.webmyne.paylabas_affiliate.tools;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.webmyne.paylabas_affiliate.R;
+import com.webmyne.paylabas_affiliate.base.MyDrawerActivity;
 import com.webmyne.paylabas_affiliate.custom_components.PagerSlidingTabStrip;
 
 public class ToolsFragment extends Fragment {
@@ -34,6 +36,8 @@ public class ToolsFragment extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +57,9 @@ public class ToolsFragment extends Fragment {
         tabs.setViewPager(pager);
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
         pager.setPageMargin(pageMargin);
+
+
+        ((MyDrawerActivity)getActivity()).setToolColor(Color.parseColor("#494949"));
     }
 
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
