@@ -21,6 +21,11 @@
     <color name="color_moneytransfer">#67A93B</color>
     <color name="color_mobiletopup">#2977AC</color>
 
+    <color name="color_giftcode_t">#ccED7D31</color>
+    <color name="color_sendmoney_t">#cc5B9BD5</color>
+    <color name="color_moneytransfer_t">#cc67A93B</color>
+    <color name="color_mobiletopup_t">#cc2977AC</color>
+
 
 <!--   &lt;!&ndash; <color name="color_giftcode">#ED7D31</color>&ndash;&gt;
     <color name="color_giftcode">#2977AC</color>

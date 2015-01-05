@@ -7,18 +7,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 import com.webmyne.paylabas_affiliate.R;
 
 public class VerificationActivity extends ActionBarActivity {
 
-    private Button btnFinishSetup;
+    private TextView btnFinishSetup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
-        btnFinishSetup= (Button) findViewById(R.id.btnFinishSetup);
+        btnFinishSetup= (TextView) findViewById(R.id.btnFinishSetup);
         btnFinishSetup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +27,7 @@ public class VerificationActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 

@@ -315,11 +315,9 @@ public class ProgressWheel extends View {
     /**
      * Check if the wheel is currently spinning
      */
-
     public boolean isSpinning() {
         return isSpinning;
     }
-
     /**
      * Reset the count (in increment mode)
      */
@@ -338,7 +336,6 @@ public class ProgressWheel extends View {
         mTargetProgress = 0.0f;
         invalidate();
     }
-
     /**
      * Puts the view on spin mode
      */

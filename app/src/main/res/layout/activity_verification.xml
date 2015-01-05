@@ -55,7 +55,7 @@
                 android:gravity="left"
                 android:padding="8dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnFinishSetup"
                 android:layout_marginTop="16dp"
                 android:paddingLeft="16dp"

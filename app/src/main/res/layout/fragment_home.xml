@@ -1,0 +1,290 @@
+<RelativeLayout xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context="com.webmyne.paylabas.userapp.home.MyAccountFragment">
+
+    <RelativeLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/back">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
+                    android:layout_margin="1dp"
+                    android:id="@+id/linearGiftCode"
+                    android:gravity="bottom"
+                    android:layout_weight="1"
+                    android:background="@color/color_giftcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                     <ImageView
+                            android:contentDescription="@string/app_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/gc"
+                            android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:background="@color/color_giftcode_t"
+                        android:layout_gravity="bottom"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:id="@+id/imgGiftCode"
+                            android:contentDescription="@string/app_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_giftcode"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:fontFamily="sans-serif-condensed"
+                            android:id="@+id/txtGiftCode"
+                            android:text="GIFT CODE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    </FrameLayout>
+
+
+                </com.webmyne.paylabas_affiliate.custom_components.SquareLayout>
+
+
+                <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
+                    android:id="@+id/linearMobileTopup"
+                    android:layout_margin="1dp"
+
+                    android:gravity="bottom"
+                    android:background="@color/color_mobiletopup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_gravity="bottom"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/imgMobileTopup"
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_mobiletopup"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:fontFamily="sans-serif-condensed"
+                        android:id="@+id/txtMobileTopup"
+                        android:text="MOBILE TOPUP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    </FrameLayout>
+
+                </com.webmyne.paylabas_affiliate.custom_components.SquareLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
+                    android:id="@+id/linearMoneyTransfer"
+                    android:layout_margin="1dp"
+
+
+                    android:gravity="bottom"
+                    android:background="@color/color_moneytransfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_gravity="bottom"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/imgMoneyTransfer"
+                        android:contentDescription="Money Transfer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_moneytransfer"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:fontFamily="sans-serif-condensed"
+                        android:id="@+id/txtMoneyTransfer"
+                        android:text="MONEY TRANSFER"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    </FrameLayout>
+
+
+                </com.webmyne.paylabas_affiliate.custom_components.SquareLayout>
+
+
+                <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
+                    android:id="@+id/linearCashInOut"
+                    android:layout_margin="1dp"
+
+                    android:gravity="bottom"
+                    android:background="@color/paylabas_dkgrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_gravity="bottom"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/imgCashInOut"
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_sendmoney"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:fontFamily="sans-serif-condensed"
+                        android:id="@+id/txtSendMoney"
+                        android:text="CASH IN/OUT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    </FrameLayout>
+
+                </com.webmyne.paylabas_affiliate.custom_components.SquareLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:id="@+id/linearCircle"
+            android:layout_gravity="center"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:visibility="gone"
+            android:background="@drawable/circle"></TextView>
+
+
+    </RelativeLayout>
+
+    <!--
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/buttonFloatAddMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="#1E88E5"
+            materialdesign:animate="false"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp"
+            materialdesign:icon="@drawable/ic_action_new" />
+    -->
+
+
+</RelativeLayout>

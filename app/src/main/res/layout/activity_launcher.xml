@@ -11,6 +11,9 @@
         android:src="@drawable/demo"
         android:scaleType="centerCrop" />
 
+
+
+
     <RelativeLayout
         android:padding="16dp"
         android:background="#cc000000"
@@ -25,9 +28,11 @@
             android:orientation="vertical">
 
 
-            <EditText
 
-                android:paddingLeft="16dp"
+
+            <EditText
+                android:layout_marginTop="16dp"
+               android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
@@ -55,7 +60,7 @@
                 android:gravity="left"
                 android:padding="8dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnLoginNext"
                 android:layout_marginTop="16dp"
                 android:paddingLeft="16dp"
@@ -69,13 +74,22 @@
                 android:background="#70ffffff"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:padding="8dp" />
+                 />
 
 
         </LinearLayout>
 
 
     </RelativeLayout>
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/footer_logo"
+        android:scaleType="centerInside" />
 
 
 </RelativeLayout>

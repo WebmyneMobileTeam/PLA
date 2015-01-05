@@ -8,17 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.webmyne.paylabas_affiliate.R;
 
 
 public class Launcher extends ActionBarActivity {
 
-    private Button btnLoginNext;
+    private TextView btnLoginNext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
-        btnLoginNext= (Button) findViewById(R.id.btnLoginNext);
+        btnLoginNext= (TextView) findViewById(R.id.btnLoginNext);
         btnLoginNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

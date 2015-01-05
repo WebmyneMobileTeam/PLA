@@ -64,18 +64,16 @@ public class MyDrawerActivity extends ActionBarActivity {
             toolbar.setTitle("Home");
             setSupportActionBar(toolbar);
         }
-
         initDrawer();
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentTransaction ft = manager.beginTransaction();
-//        ft.replace(R.id.main_container, new MyAccountFragment());
-//        ft.commit();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction ft = manager.beginTransaction();
+        ft.replace(R.id.main_container, new HomeFragment());
+        ft.commit();
 
     }
 
 
     private void initView() {
-
         //  btnLogout = (ButtonRectangle)findViewById(R.id.btnLogout);
         leftDrawerList = (ListView) findViewById(R.id.left_drawer);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -89,8 +87,8 @@ public class MyDrawerActivity extends ActionBarActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 Gravity.TOP | Gravity.RIGHT);
 
-       layoutParams.width = (int) AppUtils.convertDpToPixel(32,MyDrawerActivity.this);
-       layoutParams.height = (int) AppUtils.convertDpToPixel(32, MyDrawerActivity.this);
+        layoutParams.width = (int) AppUtils.convertDpToPixel(32, MyDrawerActivity.this);
+        layoutParams.height = (int) AppUtils.convertDpToPixel(32, MyDrawerActivity.this);
         layoutParams.rightMargin = 16;
 
         pb_toolbar = new ProgressBar(MyDrawerActivity.this);
@@ -158,7 +156,7 @@ public class MyDrawerActivity extends ActionBarActivity {
                         FragmentManager manager2 = getSupportFragmentManager();
                         FragmentTransaction ft2 = manager2.beginTransaction();
                         ft2.replace(R.id.main_container, new Aboutus());
-                       // ft2.addToBackStack("");
+                        // ft2.addToBackStack("");
                         ft2.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
@@ -180,7 +178,7 @@ public class MyDrawerActivity extends ActionBarActivity {
                         FragmentManager manager4 = getSupportFragmentManager();
                         FragmentTransaction ft4 = manager4.beginTransaction();
                         ft4.replace(R.id.main_container, new How_it_Works());
-                       // ft4.addToBackStack("");
+                        // ft4.addToBackStack("");
                         ft4.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
@@ -191,7 +189,7 @@ public class MyDrawerActivity extends ActionBarActivity {
                         FragmentManager manager5 = getSupportFragmentManager();
                         FragmentTransaction ft5 = manager5.beginTransaction();
                         ft5.replace(R.id.main_container, new FAQ());
-                       // ft5.addToBackStack("");
+                        // ft5.addToBackStack("");
                         ft5.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
@@ -202,7 +200,7 @@ public class MyDrawerActivity extends ActionBarActivity {
                         FragmentManager manager6 = getSupportFragmentManager();
                         FragmentTransaction ft6 = manager6.beginTransaction();
                         ft6.replace(R.id.main_container, new Setting());
-                       // ft6.addToBackStack("");
+                        // ft6.addToBackStack("");
                         ft6.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
