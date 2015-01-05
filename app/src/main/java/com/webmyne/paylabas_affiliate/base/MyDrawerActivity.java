@@ -29,7 +29,7 @@ import com.webmyne.paylabas_affiliate.user_navigation.Contactus;
 import com.webmyne.paylabas_affiliate.user_navigation.FAQ;
 import com.webmyne.paylabas_affiliate.user_navigation.How_it_Works;
 import com.webmyne.paylabas_affiliate.user_navigation.Setting;
-import com.webmyne.paylabas_affiliate.user_navigation.ToolsFragment;
+import com.webmyne.paylabas_affiliate.tools.ToolsFragment;
 
 public class MyDrawerActivity extends ActionBarActivity {
 

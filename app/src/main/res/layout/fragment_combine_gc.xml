@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context="com.webmyne.paylabas.userapp.giftcode.CombineGCFragment">
+
+
+
+    <!--Bottom Linear Layout-->
+
+    <LinearLayout
+        android:id="@+id/bottomLinearCombineGC"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/btnAddCombineGiftCode"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Add"
+            android:background="@color/paylabas_dkgrey"
+            android:layout_weight="1" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnCombineGcCombineGc"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Combine"
+            android:background="@color/color_giftcode"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_above="@id/bottomLinearCombineGC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
+                android:textSize="@dimen/normal_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GiftCode"
+                android:layout_weight="1" />
+
+
+            <TextView
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"
+                android:layout_marginLeft="8dp"
+                android:textSize="@dimen/normal_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearCombineGiftCode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
