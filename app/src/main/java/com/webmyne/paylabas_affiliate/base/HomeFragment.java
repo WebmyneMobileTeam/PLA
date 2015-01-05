@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.custom_components.SquareLayout;
 
@@ -18,10 +21,8 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private SquareLayout linearGiftCode;
-    private SquareLayout linearMobileTopup;
-    private SquareLayout linearMoneyTransfer;
-    private SquareLayout linearCashInOut;
+    private LinearLayout linearGiftCode;
+
 
 
     public static HomeFragment newInstance(String param1, String param2) {
@@ -53,10 +54,33 @@ public class HomeFragment extends Fragment {
 
         View convertView = inflater.inflate(R.layout.fragment_home, container, false);
 
-
+        linearGiftCode = (LinearLayout)convertView.findViewById(R.id.linearGiftCode);
+        linearGiftCode.setOnClickListener(clickListner);
 
         return convertView;
     }
+
+    public View.OnClickListener clickListner = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            switch (v.getId()){
+
+                case R.id.linearGiftCode:
+
+                    Toast.makeText(getActivity(), "giftcode clicked", Toast.LENGTH_SHORT).show();
+
+                    break;
+
+
+
+            }
+
+
+
+
+        }
+    };
 
 
 }

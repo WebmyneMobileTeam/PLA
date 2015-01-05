@@ -27,7 +27,7 @@
 
                 <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
                     android:layout_margin="1dp"
-                    android:id="@+id/linearGiftCode"
+
                     android:gravity="bottom"
                     android:layout_weight="1"
                     android:background="@color/color_giftcode"
@@ -47,6 +47,7 @@
                             android:scaleType="centerCrop" />
 
                     <LinearLayout
+                        android:id="@+id/linearGiftCode"
                         android:background="@color/color_giftcode_t"
                         android:layout_gravity="bottom"
                         android:padding="4dp"
