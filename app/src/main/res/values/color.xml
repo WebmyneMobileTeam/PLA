@@ -38,6 +38,7 @@
     <color name="paylabas_blue">#2977AC</color>
     <color name="paylabas_grey">#d1d1d1</color>
     <color name="paylabas_dkgrey">#494949</color>
+    <color name="paylabas_dkgrey_t">#cc494949</color>
 
     <color name="paylabas_white">#ffffff</color>
 

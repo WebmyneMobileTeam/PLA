@@ -71,6 +71,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="#fff"
+                            android:textStyle="bold"
                             android:textSize="18sp" />
 
                     </LinearLayout>
@@ -97,12 +98,15 @@
                         android:layout_height="match_parent">
 
                     <ImageView
+
                         android:contentDescription="@string/app_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:src="@drawable/mobiletopup"
                         android:scaleType="centerCrop" />
 
                     <LinearLayout
+                        android:background="@color/color_mobiletopup_t"
                         android:layout_gravity="bottom"
                         android:padding="4dp"
                         android:gravity="center"
@@ -121,6 +125,7 @@
                         android:scaleType="centerInside" />
 
                     <TextView
+                        android:textStyle="bold"
                         android:fontFamily="sans-serif-condensed"
                         android:id="@+id/txtMobileTopup"
                         android:text="MOBILE TOPUP"
@@ -159,12 +164,14 @@
                         android:layout_height="match_parent">
 
                     <ImageView
+                        android:src="@drawable/moneytransfer"
                         android:contentDescription="@string/app_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
 
                     <LinearLayout
+                        android:background="@color/color_moneytransfer_t"
                         android:layout_gravity="bottom"
                         android:padding="4dp"
                         android:gravity="center"
@@ -184,6 +191,7 @@
                         android:scaleType="centerInside" />
 
                     <TextView
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:fontFamily="sans-serif-condensed"
                         android:id="@+id/txtMoneyTransfer"
@@ -204,7 +212,6 @@
                 <com.webmyne.paylabas_affiliate.custom_components.SquareLayout
                     android:id="@+id/linearCashInOut"
                     android:layout_margin="1dp"
-
                     android:gravity="bottom"
                     android:background="@color/paylabas_dkgrey"
                     android:layout_width="match_parent"
@@ -217,12 +224,14 @@
                         android:layout_height="match_parent">
 
                     <ImageView
+                        android:src="@drawable/cashinout"
                         android:contentDescription="@string/app_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
 
                     <LinearLayout
+                        android:background="@color/paylabas_dkgrey_t"
                         android:layout_gravity="bottom"
                         android:padding="4dp"
                         android:gravity="center"
@@ -240,6 +249,7 @@
                         android:scaleType="centerInside" />
 
                     <TextView
+                        android:textStyle="bold"
                         android:fontFamily="sans-serif-condensed"
                         android:id="@+id/txtSendMoney"
                         android:text="CASH IN/OUT"
