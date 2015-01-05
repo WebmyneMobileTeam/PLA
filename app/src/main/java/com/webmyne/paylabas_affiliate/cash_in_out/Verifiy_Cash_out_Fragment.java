@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.Button;
 import com.webmyne.paylabas_affiliate.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,16 +70,6 @@ public class Verifiy_Cash_out_Fragment extends Fragment {
 
         TextView btnVerify = (TextView)converview.findViewById(R.id.btnVerify);
 
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction ft = manager.beginTransaction();
-                ft.replace(R.id.cash_out_container, new Fragment_Cash_OUT2());
-                ft.commit();
-            }
-        });
 
         return converview;
     }

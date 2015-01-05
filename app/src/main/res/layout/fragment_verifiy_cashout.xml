@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="We have sent you an SMS with a code to your mobile number. \n\nPlease enter verification code\n"
                 android:textSize="18sp"
+                android:textColor="@color/paylabas_blue"
                 android:gravity="center"
                 android:padding="8dp" />
 
