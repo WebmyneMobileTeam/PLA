@@ -3,18 +3,22 @@ package com.webmyne.paylabas_affiliate.cash_in_out;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.gc.materialdesign.views.Button;
 import com.webmyne.paylabas_affiliate.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Cash_IN#newInstance} factory method to
+ * Use the {@link Verifiy_Cash_out_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Cash_IN extends Fragment {
+public class Verifiy_Cash_out_Fragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,6 +28,8 @@ public class Fragment_Cash_IN extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private TextView btnBack;
+    private TextView btnVerify;
 
     /**
      * Use this factory method to create a new instance of
@@ -31,11 +37,11 @@ public class Fragment_Cash_IN extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_Cash_IN.
+     * @return A new instance of fragment Verifiy_Cash_out_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Cash_IN newInstance(String param1, String param2) {
-        Fragment_Cash_IN fragment = new Fragment_Cash_IN();
+    public static Verifiy_Cash_out_Fragment newInstance(String param1, String param2) {
+        Verifiy_Cash_out_Fragment fragment = new Verifiy_Cash_out_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -43,7 +49,7 @@ public class Fragment_Cash_IN extends Fragment {
         return fragment;
     }
 
-    public Fragment_Cash_IN() {
+    public Verifiy_Cash_out_Fragment() {
         // Required empty public constructor
     }
 
@@ -60,8 +66,23 @@ public class Fragment_Cash_IN extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__cash__in, container, false);
+        View converview =  inflater.inflate(R.layout.fragment_verifiy_cashout, container, false);
+
+        TextView btnVerify = (TextView)converview.findViewById(R.id.btnVerify);
+        TextView btnBack = (TextView)converview.findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = manager.beginTransaction();
+                ft.replace(R.id.cash_out_container, new Fragment_Cash_OUT2());
+                ft.commit();
+            }
+        });
+
+        return converview;
     }
 
-
+// end of main class
 }

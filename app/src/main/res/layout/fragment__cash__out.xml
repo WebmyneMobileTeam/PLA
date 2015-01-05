@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    tools:context="com.webmyne.paylabas.userapp.user_navigation.Setting">
+    <FrameLayout
+        android:id="@+id/cash_out_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+    </FrameLayout>
+</RelativeLayout>

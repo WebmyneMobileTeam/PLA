@@ -107,7 +107,7 @@ public class Home_fragment_Cash_IN_OUT extends Fragment {
             if (position == 0) {
                 return Fragment_Cash_IN.newInstance("", "");
             } else if (position == 1) {
-                return Fragment_Cash_OUT.newInstance("", "");
+                return Fragment_Cash_OUT_HOME.newInstance("", "");
             } else {
                 return Home_fragment_Cash_IN_OUT.newInstance("", "");
             }
