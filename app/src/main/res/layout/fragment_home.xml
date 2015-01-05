@@ -10,7 +10,7 @@
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+`
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,13 +66,13 @@
                             android:scaleType="centerInside" />
 
                         <TextView
-                            android:fontFamily="sans-serif-condensed"
+
                             android:id="@+id/txtGiftCode"
                             android:text="GIFT CODE"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="#fff"
-                            android:textStyle="bold"
+
                             android:textSize="18sp" />
 
                     </LinearLayout>
@@ -126,8 +126,6 @@
                         android:scaleType="centerInside" />
 
                     <TextView
-                        android:textStyle="bold"
-                        android:fontFamily="sans-serif-condensed"
                         android:id="@+id/txtMobileTopup"
                         android:text="MOBILE TOPUP"
                         android:layout_width="wrap_content"
@@ -192,9 +190,8 @@
                         android:scaleType="centerInside" />
 
                     <TextView
-                        android:textStyle="bold"
+
                         android:gravity="center"
-                        android:fontFamily="sans-serif-condensed"
                         android:id="@+id/txtMoneyTransfer"
                         android:text="MONEY TRANSFER"
                         android:layout_width="wrap_content"
@@ -251,8 +248,6 @@
                         android:scaleType="centerInside" />
 
                     <TextView
-                        android:textStyle="bold"
-                        android:fontFamily="sans-serif-condensed"
                         android:id="@+id/txtSendMoney"
                         android:text="CASH IN/OUT"
                         android:layout_width="wrap_content"

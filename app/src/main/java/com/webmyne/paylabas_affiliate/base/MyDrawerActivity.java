@@ -264,7 +264,6 @@ public class MyDrawerActivity extends ActionBarActivity {
     public void setToolColor(int color) {
         toolbar.setBackgroundColor(color);
     }
-
     public void setToolTitle(String title) {
         toolbar.setTitle(title);
     }
