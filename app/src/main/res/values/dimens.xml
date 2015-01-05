@@ -10,5 +10,5 @@
     <dimen name="normal_text">18sp</dimen>
     <integer name="preference_fragment_scrollbarStyle">0x02000000</integer> <!-- outsideOverlay -->
 
-    <dimen name="normal_text">18sp</dimen>
+
 </resources>

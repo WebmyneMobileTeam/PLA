@@ -1,10 +1,100 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.webmyne.paylabas_affiliate.cash_in_out.Fragment_Cash_OUT">
+    android:padding="16dp"
+    android:orientation="vertical"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    tools:context="com.webmyne.paylabas.userapp.user_navigation.Setting">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="cash out_fragment" />
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text = "NEXT"
+            android:layout_weight="1"
+            android:background="@color/paylabas_blue"/>
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginBottom="2dp"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingRight="8dp"
+                    android:gravity="right|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/icon_mobile"
+                    android:layout_weight="4" />
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="enter mobile no"
+                    android:textColor="@color/primary_material_dark"
+                    android:id="@+id/edMobileno"
+                    android:textSize="18sp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginBottom="2dp"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingRight="14dp"
+                    android:gravity="right|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/euro"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="enter cash out amount"
+                    android:id="@+id/edAmount"
+                    android:textColor="@color/primary_material_dark"
+                    android:textSize="18sp"
+                    android:inputType="numberDecimal"
+                    android:digits="0123456789.,"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

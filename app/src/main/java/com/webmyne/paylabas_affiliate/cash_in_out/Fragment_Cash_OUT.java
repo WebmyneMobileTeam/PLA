@@ -1,6 +1,7 @@
 package com.webmyne.paylabas_affiliate.cash_in_out;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,8 +9,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.gc.materialdesign.views.Button;
+import com.gc.materialdesign.views.ButtonRectangle;
 import com.webmyne.paylabas_affiliate.R;
+import com.webmyne.paylabas_affiliate.base.VerificationActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +31,10 @@ public class Fragment_Cash_OUT extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private EditText edMobileno;
+    private EditText edAmount;
+
+    private ButtonRectangle btnNext;
 
     /**
      * Use this factory method to create a new instance of
@@ -62,8 +71,24 @@ public class Fragment_Cash_OUT extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment__cash__out, container, false);
+        View convertview = inflater.inflate(R.layout.fragment_fragment__cash__out, container, false);
+        ButtonRectangle btnNext = (ButtonRectangle)convertview.findViewById(R.id.btnNext);
+        EditText edMobileno= (EditText)convertview.findViewById(R.id.edMobileno);
+        EditText edAmount= (EditText)convertview.findViewById(R.id.edAmount);
+
+
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent verfiyRecipient = new Intent( getActivity() ,VerificationActivity.class );
+                startActivity(verfiyRecipient);
+                getActivity().finish();
+            }
+        });
+
+        return convertview;
     }
 
-
+//end of main class
 }
