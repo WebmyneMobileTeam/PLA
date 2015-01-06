@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
 import com.webmyne.paylabas_affiliate.R;
 
 
@@ -28,8 +29,8 @@ public class RedeemGCFragment2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private TextView btnBack;
-    private TextView btnVerify;
+
+    private ButtonRectangle btnVerify;
 
     /**
      * Use this factory method to create a new instance of
@@ -66,10 +67,10 @@ public class RedeemGCFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View converview =  inflater.inflate(R.layout.fragment_verifiy_cashout, container, false);
+        View converview =  inflater.inflate(R.layout.fragment_redeemgc2, container, false);
 
-        TextView btnVerify = (TextView)converview.findViewById(R.id.btnVerify);
-        btnVerify.setBackgroundColor(getActivity().getResources().getColor(R.color.color_giftcode));
+         btnVerify = (ButtonRectangle)converview.findViewById(R.id.btnVerify);
+      //  btnVerify.setBackgroundColor(getActivity().getResources().getColor(R.color.color_giftcode));
 
 
         btnVerify.setOnClickListener(new View.OnClickListener() {

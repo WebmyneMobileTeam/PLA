@@ -66,9 +66,9 @@ public class Verifiy_Cash_out_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View converview =  inflater.inflate(R.layout.fragment_verifiy_cashout, container, false);
+        View converview =  inflater.inflate(R.layout.fragment_cashout_verify, container, false);
 
-        TextView btnVerify = (TextView)converview.findViewById(R.id.btnVerify);
+
 
 
         return converview;
