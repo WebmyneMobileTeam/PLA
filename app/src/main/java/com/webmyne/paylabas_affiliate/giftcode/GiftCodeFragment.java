@@ -123,7 +123,7 @@ public class GiftCodeFragment extends Fragment {
 
             if(position == 0){
 
-                return RedeemGCFragment.newInstance("","");
+                return RedeemGCFragment_Parent.newInstance("", "");
 
             }else if(position == 1){
 
@@ -142,7 +142,7 @@ public class GiftCodeFragment extends Fragment {
                     return GiftCodeHomeFragment.newInstance("","");
                 case 1: return GenerateGCFragment.newInstance("","");
                 case 2: return CombineGCFragment.newInstance("","");
-                case 3: return RedeemGCFragment.newInstance("","");
+                case 3: return RedeemGCFragment_Parent.newInstance("","");
 
                 default: return null;
 

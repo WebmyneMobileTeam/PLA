@@ -1,36 +1,21 @@
 package com.webmyne.paylabas_affiliate.giftcode;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.android.volley.VolleyError;
-import com.gc.materialdesign.widgets.SnackBar;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.custom_components.CircleDialog;
-import com.webmyne.paylabas_affiliate.helpers.AppConstants;
-import com.webmyne.paylabas_affiliate.helpers.CallWebService;
-import com.webmyne.paylabas_affiliate.helpers.ComplexPreferences;
 import com.webmyne.paylabas_affiliate.model.GiftCode;
 import com.webmyne.paylabas_affiliate.model.User;
 
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
-public class RedeemGCFragment extends Fragment {
+public class RedeemGCFragment_Parent extends Fragment {
 
     private ListView listRedeemGC;
     private ArrayList<GiftCode> giftCodes;
@@ -38,12 +23,12 @@ public class RedeemGCFragment extends Fragment {
     private CircleDialog circleDialog;
     private User user;
 
-    public static RedeemGCFragment newInstance(String param1, String param2) {
-        RedeemGCFragment fragment = new RedeemGCFragment();
+    public static RedeemGCFragment_Parent newInstance(String param1, String param2) {
+        RedeemGCFragment_Parent fragment = new RedeemGCFragment_Parent();
         return fragment;
     }
 
-    public RedeemGCFragment() {
+    public RedeemGCFragment_Parent() {
         // Required empty public constructor
     }
 
