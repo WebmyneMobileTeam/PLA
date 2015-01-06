@@ -72,7 +72,9 @@ public class Fragment_Cash_OUT_HOME extends Fragment {
 
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction ft = manager.beginTransaction();
+
         ft.replace(R.id.cash_out_container, new Fragment_Cash_OUT2());
+
         ft.commit();
         return convertview;
     }

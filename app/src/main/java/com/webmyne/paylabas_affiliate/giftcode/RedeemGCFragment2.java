@@ -77,7 +77,7 @@ public class RedeemGCFragment2 extends Fragment {
             public void onClick(View v) {
                 final FragmentManager fm = getActivity().getSupportFragmentManager();
                 final FragmentTransaction ft = fm.beginTransaction();
-
+                ft.setCustomAnimations(R.anim.entry, R.anim.exit,R.anim.entry, R.anim.exit);
                 ft.replace(R.id.reedem_container,new RedeemGCFragment3());
                 ft.commit();
                 for (int i = 0; i < fm.getBackStackEntryCount(); i++) {

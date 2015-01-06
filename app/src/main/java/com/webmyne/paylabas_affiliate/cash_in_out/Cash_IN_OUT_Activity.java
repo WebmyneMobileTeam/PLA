@@ -47,6 +47,10 @@ public class Cash_IN_OUT_Activity extends ActionBarActivity {
 
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.anim.entry,R.anim.exit);
+    }
 
 }

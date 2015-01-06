@@ -47,6 +47,10 @@ public class GiftCodeActivity extends ActionBarActivity {
         
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.anim.entry,R.anim.exit);
+    }
 
 }

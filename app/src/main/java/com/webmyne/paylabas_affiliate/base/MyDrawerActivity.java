@@ -112,13 +112,14 @@ public class MyDrawerActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 drawerLayout.closeDrawers();
-                FragmentManager fm = getSupportFragmentManager();
+
+                final FragmentManager fm = getSupportFragmentManager();
+                final FragmentTransaction ft = fm.beginTransaction();
+                ft.setCustomAnimations(R.anim.entry, R.anim.exit,R.anim.entry, R.anim.exit);
                 switch (position) {
 
                     case 0:
 
-                        FragmentManager manager = getSupportFragmentManager();
-                        FragmentTransaction ft = manager.beginTransaction();
                         ft.replace(R.id.main_container, new HomeFragment(), "HF");
                         // ft.addToBackStack("");
                         ft.commit();
@@ -130,22 +131,18 @@ public class MyDrawerActivity extends ActionBarActivity {
                         break;
                     case 1:
 
-                        FragmentManager manager1 = getSupportFragmentManager();
-                        FragmentTransaction ft1 = manager1.beginTransaction();
-                        ft1.replace(R.id.main_container, new ToolsFragment());
+                        ft.replace(R.id.main_container, new ToolsFragment());
                        // ft1.addToBackStack("");
-                        ft1.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
                         break;
                     case 2:
 
-                        FragmentManager manager22 = getSupportFragmentManager();
-                        FragmentTransaction ft22 = manager22.beginTransaction();
-                        ft22.replace(R.id.main_container, new ReportFragment());
+                        ft.replace(R.id.main_container, new ReportFragment());
                        // ft22.addToBackStack("");
-                        ft22.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
@@ -153,55 +150,45 @@ public class MyDrawerActivity extends ActionBarActivity {
                         break;
                     case 3:
 
-                        FragmentManager manager2 = getSupportFragmentManager();
-                        FragmentTransaction ft2 = manager2.beginTransaction();
-                        ft2.replace(R.id.main_container, new Aboutus());
+                        ft.replace(R.id.main_container, new Aboutus());
                         // ft2.addToBackStack("");
-                        ft2.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
                         break;
                     case 4:
 
-                        FragmentManager manager3 = getSupportFragmentManager();
-                        FragmentTransaction ft3 = manager3.beginTransaction();
-                        ft3.replace(R.id.main_container, new Contactus());
+                        ft.replace(R.id.main_container, new Contactus());
                         //ft3.addToBackStack("");
-                        ft3.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
                         break;
                     case 5:
 
-                        FragmentManager manager4 = getSupportFragmentManager();
-                        FragmentTransaction ft4 = manager4.beginTransaction();
-                        ft4.replace(R.id.main_container, new How_it_Works());
+                        ft.replace(R.id.main_container, new How_it_Works());
                         // ft4.addToBackStack("");
-                        ft4.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
                         break;
                     case 6:
 
-                        FragmentManager manager5 = getSupportFragmentManager();
-                        FragmentTransaction ft5 = manager5.beginTransaction();
-                        ft5.replace(R.id.main_container, new FAQ());
+                        ft.replace(R.id.main_container, new FAQ());
                         // ft5.addToBackStack("");
-                        ft5.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
                         break;
                     case 7:
 
-                        FragmentManager manager6 = getSupportFragmentManager();
-                        FragmentTransaction ft6 = manager6.beginTransaction();
-                        ft6.replace(R.id.main_container, new Setting());
+                        ft.replace(R.id.main_container, new Setting());
                         // ft6.addToBackStack("");
-                        ft6.commit();
+                        ft.commit();
                         for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                             fm.popBackStack();
                         }
@@ -308,22 +295,10 @@ public class MyDrawerActivity extends ActionBarActivity {
         super.onConfigurationChanged(newConfig);
         drawerToggle.onConfigurationChanged(newConfig);
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_my_drawer, menu);
-        return true;
-    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        if (drawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.anim.entry,R.anim.exit);
+    }
 }

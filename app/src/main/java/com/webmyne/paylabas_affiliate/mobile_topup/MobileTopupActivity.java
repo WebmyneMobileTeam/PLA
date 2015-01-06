@@ -44,6 +44,10 @@ public class MobileTopupActivity extends ActionBarActivity {
 
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.anim.entry,R.anim.exit);
+    }
 
 }
