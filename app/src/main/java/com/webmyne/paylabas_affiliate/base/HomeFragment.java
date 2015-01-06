@@ -1,6 +1,7 @@
 package com.webmyne.paylabas_affiliate.base;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.cash_in_out.Home_fragment_Cash_IN_OUT;
 import com.webmyne.paylabas_affiliate.custom_components.SquareLayout;
+import com.webmyne.paylabas_affiliate.giftcode.GiftCodeActivity;
 import com.webmyne.paylabas_affiliate.giftcode.GiftCodeFragment;
 import com.webmyne.paylabas_affiliate.mobile_topup.MobiletopupFragment;
 
@@ -83,12 +85,17 @@ public class HomeFragment extends Fragment {
             switch (v.getId()){
                 case R.id.linearGiftCode:
 
-                    ft.replace(R.id.main_container,new GiftCodeFragment(),"GHome");
+                 /*   ft.replace(R.id.main_container,new GiftCodeFragment(),"GHome");
                     //  ft.addToBackStack("");
                     ft.commit();
                     for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                         fm.popBackStack();
-                    }
+                    }*/
+
+                    Intent i2 = new Intent(getActivity(), GiftCodeActivity.class);
+                    startActivity(i2);
+
+
                     break;
 
                 case R.id.linearCashInOut:

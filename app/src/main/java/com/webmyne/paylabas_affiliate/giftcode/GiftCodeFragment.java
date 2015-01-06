@@ -52,6 +52,14 @@ public class GiftCodeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+
+
+
+
+
     }
 
     @Override
@@ -93,7 +101,7 @@ public class GiftCodeFragment extends Fragment {
         ((MyDrawerActivity)getActivity()).setToolSubTitle("Balance "+getResources().getString(R.string.euro)+" "+user.LemonwayAmmount);
 
 */
-        ((MyDrawerActivity)getActivity()).setToolColor(getResources().getColor(R.color.color_giftcode));
+//        ((MyDrawerActivity)getActivity()).setToolColor(getResources().getColor(R.color.color_giftcode));
 
 
     }
