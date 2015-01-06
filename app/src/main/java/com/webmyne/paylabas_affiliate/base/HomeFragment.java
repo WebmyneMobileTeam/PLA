@@ -17,6 +17,7 @@ import com.webmyne.paylabas_affiliate.cash_in_out.Home_fragment_Cash_IN_OUT;
 import com.webmyne.paylabas_affiliate.custom_components.SquareLayout;
 import com.webmyne.paylabas_affiliate.giftcode.GiftCodeActivity;
 import com.webmyne.paylabas_affiliate.giftcode.GiftCodeFragment;
+import com.webmyne.paylabas_affiliate.mobile_topup.MobileTopupActivity;
 import com.webmyne.paylabas_affiliate.mobile_topup.MobiletopupFragment;
 
 
@@ -107,11 +108,18 @@ public class HomeFragment extends Fragment {
                     break;
 
                 case R.id.linearMobileTopup:
-                    ft.replace(R.id.main_container,new MobiletopupFragment(),"MOBILE_TOPUP");
-                    ft.commit();
-                    for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
-                        fm.popBackStack();
-                    }
+
+                    Intent intent=new Intent(getActivity(), MobileTopupActivity.class);
+                    startActivity(intent);
+
+
+
+
+//                    ft.replace(R.id.main_container,new MobiletopupFragment(),"MOBILE_TOPUP");
+//                    ft.commit();
+//                    for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+//                        fm.popBackStack();
+//                    }
 
                     break;
 

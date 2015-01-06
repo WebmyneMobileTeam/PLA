@@ -24,6 +24,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.helpers.AppUtils;
+import com.webmyne.paylabas_affiliate.reports.ReportFragment;
 import com.webmyne.paylabas_affiliate.user_navigation.Aboutus;
 import com.webmyne.paylabas_affiliate.user_navigation.Contactus;
 import com.webmyne.paylabas_affiliate.user_navigation.FAQ;
@@ -116,15 +117,15 @@ public class MyDrawerActivity extends ActionBarActivity {
 
                     case 0:
 
-//                        FragmentManager manager = getSupportFragmentManager();
-//                        FragmentTransaction ft = manager.beginTransaction();
-//                        ft.replace(R.id.main_container, new MyAccountFragment(), "MA");
-//                        // ft.addToBackStack("");
-//                        ft.commit();
-//
-//                        for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
-//                            fm.popBackStack();
-//                        }
+                        FragmentManager manager = getSupportFragmentManager();
+                        FragmentTransaction ft = manager.beginTransaction();
+                        ft.replace(R.id.main_container, new HomeFragment(), "HF");
+                        // ft.addToBackStack("");
+                        ft.commit();
+
+                        for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+                            fm.popBackStack();
+                        }
 
                         break;
                     case 1:
@@ -140,14 +141,14 @@ public class MyDrawerActivity extends ActionBarActivity {
                         break;
                     case 2:
 
-//                        FragmentManager manager22 = getSupportFragmentManager();
-//                        FragmentTransaction ft22 = manager22.beginTransaction();
-//                        ft22.replace(R.id.main_container, new MyRecipient_home());
-//                       // ft22.addToBackStack("");
-//                        ft22.commit();
-//                        for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
-//                            fm.popBackStack();
-//                        }
+                        FragmentManager manager22 = getSupportFragmentManager();
+                        FragmentTransaction ft22 = manager22.beginTransaction();
+                        ft22.replace(R.id.main_container, new ReportFragment());
+                       // ft22.addToBackStack("");
+                        ft22.commit();
+                        for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+                            fm.popBackStack();
+                        }
 
                         break;
                     case 3:

@@ -43,6 +43,6 @@ public class MobiletopupFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ((MyDrawerActivity)getActivity()).setToolColor(getResources().getColor(R.color.color_mobiletopup));
+//        ((MyDrawerActivity)getActivity()).setToolColor(getResources().getColor(R.color.color_mobiletopup));
     }
 }

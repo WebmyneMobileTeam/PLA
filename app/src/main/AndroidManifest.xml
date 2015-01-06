@@ -35,6 +35,10 @@
             android:name=".giftcode.GiftCodeActivity"
             android:label="@string/title_activity_gift_code" >
         </activity>
+        <activity
+            android:name=".mobile_topup.MobileTopupActivity"
+            android:label="@string/title_activity_gift_code" >
+        </activity>
     </application>
 
 </manifest>
