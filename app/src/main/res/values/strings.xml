@@ -293,5 +293,6 @@
     <string name="title_activity_setting">Setting</string>
     <string name="title_activity_verification">VerificationActivity</string>
     <string name="title_activity_gift_code">GiftCodeActivity</string>
+    <string name="title_activity_cash__in__out_">Cash_IN_OUT_Activity</string>
 
 </resources>

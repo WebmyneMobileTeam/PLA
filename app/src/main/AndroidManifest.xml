@@ -36,6 +36,10 @@
             android:label="@string/title_activity_gift_code" >
         </activity>
         <activity
+            android:name=".cash_in_out.Cash_IN_OUT_Activity"
+            android:label="@string/title_activity_cash__in__out_" >
+        </activity>
+        <activity
             android:name=".mobile_topup.MobileTopupActivity"
             android:label="@string/title_activity_gift_code" >
         </activity>

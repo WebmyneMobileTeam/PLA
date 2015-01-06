@@ -68,7 +68,9 @@ public class Home_fragment_Cash_IN_OUT extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View convertView =inflater.inflate(R.layout.fragment_home_fragment__cash__in__out, container, false);
+
         tabs=(PagerSlidingTabStrip)convertView.findViewById(R.id.tabs_cash_in_out);
         pager=(ViewPager)convertView.findViewById(R.id.pager_cash_in_out);
 

@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.webmyne.paylabas_affiliate.R;
+import com.webmyne.paylabas_affiliate.cash_in_out.Cash_IN_OUT_Activity;
 import com.webmyne.paylabas_affiliate.cash_in_out.Home_fragment_Cash_IN_OUT;
 import com.webmyne.paylabas_affiliate.custom_components.SquareLayout;
 import com.webmyne.paylabas_affiliate.giftcode.GiftCodeActivity;
@@ -100,11 +101,14 @@ public class HomeFragment extends Fragment {
                     break;
 
                 case R.id.linearCashInOut:
-                    ft.replace(R.id.main_container,new Home_fragment_Cash_IN_OUT(),"CASH_IN_OUT");
+                   /* ft.replace(R.id.main_container,new Home_fragment_Cash_IN_OUT(),"CASH_IN_OUT");
                     ft.commit();
                     for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                         fm.popBackStack();
-                    }
+                    }*/
+                    Intent i3 = new Intent(getActivity(), Cash_IN_OUT_Activity.class);
+                    startActivity(i3);
+
                     break;
 
                 case R.id.linearMobileTopup:
