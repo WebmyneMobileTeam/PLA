@@ -59,7 +59,7 @@ public class ToolsFragment extends Fragment {
         pager.setPageMargin(pageMargin);
 
 
-        ((MyDrawerActivity)getActivity()).setToolColor(Color.parseColor("#494949"));
+        ((MyDrawerActivity)getActivity()).setToolColor(getResources().getColor(R.color.color_appbar));
     }
 
     public class MyPagerAdapter extends FragmentStatePagerAdapter {

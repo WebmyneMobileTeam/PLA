@@ -91,6 +91,7 @@ public class FAQ extends Fragment {
                         args.putInt("Position",position );
                         Fragment fm= new FAQ_Answer();
                         fm.setArguments(args);
+                ft1.setCustomAnimations(R.anim.entry, R.anim.exit,R.anim.entry, R.anim.exit);
                         ft1.replace(R.id.main_container,fm);
                         ft1.addToBackStack("");
                         ft1.commit();

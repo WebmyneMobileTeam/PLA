@@ -30,7 +30,7 @@ public class Cash_IN_OUT_Activity extends ActionBarActivity {
                     .commit();
         }
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-      //  toolbar.setBackgroundColor(getResources().getColor(R.color.));
+        toolbar.setBackgroundColor(getResources().getColor(R.color.color_appbar));
         if (toolbar != null) {
             toolbar.setTitle("Home");
             setSupportActionBar(toolbar);
