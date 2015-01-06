@@ -47,6 +47,8 @@ public class RedeemGCFragment extends Fragment {
         // Required empty public constructor
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +72,7 @@ public class RedeemGCFragment extends Fragment {
 
      /*   ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(getActivity(), "user_pref", 0);
         user = complexPreferences.getObject("current_user", User.class);*/
-
     }
-
-
 
     private void fillUpRedeemGCs(ArrayList<GiftCode> giftCodes) {
 
@@ -86,7 +85,6 @@ public class RedeemGCFragment extends Fragment {
                 redeemGiftCodesList.add(giftCode);
             }
         }
-
 
     }
 

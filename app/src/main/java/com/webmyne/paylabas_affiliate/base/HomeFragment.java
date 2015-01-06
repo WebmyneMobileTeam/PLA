@@ -64,7 +64,6 @@ public class HomeFragment extends Fragment {
 
         linearGiftCode = (LinearLayout)convertView.findViewById(R.id.linearGiftCode);
         linearGiftCode.setOnClickListener(clickListner);
-
         linearCashInOut = (LinearLayout)convertView.findViewById(R.id.linearCashInOut);
         linearCashInOut.setOnClickListener(clickListner);
         linearMobileTopup = (LinearLayout)convertView.findViewById(R.id.linearMobileTopup);
@@ -75,27 +74,21 @@ public class HomeFragment extends Fragment {
 
     public View.OnClickListener clickListner = new View.OnClickListener() {
 
-
-
         @Override
         public void onClick(View v) {
             final FragmentManager fm = getActivity().getSupportFragmentManager();
             final FragmentTransaction ft = fm.beginTransaction();
-
+            ft.setCustomAnimations(R.anim.entry, R.anim.exit,R.anim.entry, R.anim.exit);
 
             switch (v.getId()){
-
                 case R.id.linearGiftCode:
 
                     ft.replace(R.id.main_container,new GiftCodeFragment(),"GHome");
                     //  ft.addToBackStack("");
                     ft.commit();
-
-
                     for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                         fm.popBackStack();
                     }
-
                     break;
 
                 case R.id.linearCashInOut:

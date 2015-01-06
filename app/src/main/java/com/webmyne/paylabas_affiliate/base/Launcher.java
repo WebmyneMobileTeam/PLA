@@ -19,17 +19,25 @@ public class Launcher extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // overridePendingTransition(R.anim.entry,R.anim.exit);
         setContentView(R.layout.activity_launcher);
         btnLoginNext= (TextView) findViewById(R.id.btnLoginNext);
         btnLoginNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 Intent intent =new Intent(Launcher.this,VerificationActivity.class);
+
                 startActivity(intent);
+
             }
         });
     }
 
-
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.anim.entry,R.anim.exit);
+    }
 }

@@ -18,6 +18,7 @@ public class VerificationActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // overridePendingTransition(R.anim.entry,R.anim.exit);
         setContentView(R.layout.activity_verification);
         btnFinishSetup= (TextView) findViewById(R.id.btnFinishSetup);
         btnFinishSetup.setOnClickListener(new View.OnClickListener() {
@@ -30,5 +31,9 @@ public class VerificationActivity extends ActionBarActivity {
 
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.anim.entry,R.anim.exit);
+    }
 }
