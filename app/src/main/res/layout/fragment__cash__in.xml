@@ -41,6 +41,7 @@
     </WebView>
 
     <LinearLayout
+        android:background="@color/back"
         android:id="@+id/linearMainAddMoney"
         android:padding="16dp"
         android:layout_above="@id/bottomlinearAddMoney"
