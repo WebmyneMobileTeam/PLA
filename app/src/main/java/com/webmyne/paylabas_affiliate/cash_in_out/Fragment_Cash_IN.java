@@ -1,12 +1,14 @@
 package com.webmyne.paylabas_affiliate.cash_in_out;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gc.materialdesign.views.ButtonRectangle;
 import com.webmyne.paylabas_affiliate.R;
 
 /**
@@ -23,6 +25,8 @@ public class Fragment_Cash_IN extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ButtonRectangle btnReset;
 
 
     /**
@@ -60,7 +64,11 @@ public class Fragment_Cash_IN extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__cash__in, container, false);
+        View convertview =inflater.inflate(R.layout.fragment__cash__in, container, false);
+        btnReset = (ButtonRectangle)convertview.findViewById(R.id.btnReset);
+        btnReset.setTextColor(Color.parseColor("#494949"));
+
+        return convertview;
     }
 
 

@@ -14,19 +14,19 @@
         android:orientation="horizontal">
 
         <com.gc.materialdesign.views.ButtonRectangle
-            android:id="@+id/btnResetAddMoney"
+            android:id="@+id/btnReset"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Reset"
-            android:background="@color/paylabas_blue"
+            android:text="RESET"
+            android:background="@color/paylabas_grey"
             android:layout_weight="1" />
 
         <com.gc.materialdesign.views.ButtonRectangle
-            android:id="@+id/btnNextAddMoney"
+            android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Next"
-            android:background="@color/paylabas_green"
+            android:text="NEXT"
+            android:background="@color/paylabas_blue"
             android:layout_weight="1" />
     </LinearLayout>
 
