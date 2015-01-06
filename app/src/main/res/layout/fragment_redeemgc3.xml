@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.webmyne.paylabas_affiliate.giftcode.RedeemGCFragment3">
+
+    <!--Bottom Linear-->
+
+    <LinearLayout
+        android:id="@+id/bottomLinearGenerateGC"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnGenerateGCGenerateGC"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="REDEEM"
+            android:background="@color/color_giftcode"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <!-- Main linear -->
+    <LinearLayout
+        android:id="@+id/mainlineargenerategc"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_above="@id/bottomLinearGenerateGC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+           <ImageView
+               android:layout_marginTop="4dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/ic_giftcode_small"/>
+            <TextView
+
+                android:fontFamily="sans-serif-condensed"
+                android:text="190254038"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:layout_weight="4"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:fontFamily="sans-serif-condensed"
+                android:text="€ 50"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="@dimen/normal_text" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:paddingTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Select Service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="@dimen/normal_text" />
+
+        <Spinner
+            android:spinnerMode="dialog"
+            android:id="@+id/spService"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              ></Spinner>
+
+
+
+        <TextView
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="8dp"
+            android:text="Select Redeem Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="@dimen/normal_text" />
+
+        <Spinner
+            android:spinnerMode="dialog"
+            android:id="@+id/spReedemAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/security_questions"
+            android:layout_marginTop="8dp"></Spinner>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="8dp"
+            android:text="Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="@dimen/normal_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:fontFamily="sans-serif-condensed"
+                android:paddingRight="8dp"
+                android:gravity="right|center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/euro"
+                android:layout_weight="4" />
+
+            <EditText
+                android:hint="enter amount"
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/edAmountGenerateGC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:digits="0123456789.,"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--AnotherLinear-->
+
+
+
+</RelativeLayout>
