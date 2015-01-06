@@ -53,7 +53,7 @@
                 android:paddingTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter mobile no111"
+                android:hint="enter mobile no"
                 android:textColor="@color/primary_material_dark"
                 android:id="@+id/edMobileno"
                 android:textSize="18sp"

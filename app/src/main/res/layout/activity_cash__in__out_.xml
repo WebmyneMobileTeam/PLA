@@ -3,6 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back"
     tools:context="com.webmyne.paylabas_affiliate.cash_in_out.Cash_IN_OUT_Activity"
     tools:ignore="MergeRootFrame"
     android:orientation="vertical">
