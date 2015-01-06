@@ -64,7 +64,7 @@
                 android:paddingBottom="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Finish setup"
+                android:text="FINISH SETUP"
                 android:textColor="#fff"
                 android:background="#70ffffff"
                 android:textSize="18sp"
