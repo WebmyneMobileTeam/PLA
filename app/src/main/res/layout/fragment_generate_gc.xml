@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
 
-            android:text="Reset"
+            android:text="RESET"
             android:background="@color/paylabas_grey"
             android:layout_weight="1" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/btnGenerateGCGenerateGC"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Check Price"
+            android:text="CHECK PRICE"
             android:background="@color/color_giftcode"
             android:layout_weight="1" />
 

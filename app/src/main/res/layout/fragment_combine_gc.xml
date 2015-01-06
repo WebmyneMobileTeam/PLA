@@ -20,7 +20,7 @@
             android:id="@+id/btnAddCombineGiftCode"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Add"
+            android:text="ADD"
             android:background="@color/paylabas_grey"
             android:layout_weight="1" />
 
@@ -29,7 +29,7 @@
             android:fontFamily="sans-serif-condensed"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Combine"
+            android:text="COMBINE"
             android:background="@color/color_giftcode"
             android:layout_weight="1" />
 
