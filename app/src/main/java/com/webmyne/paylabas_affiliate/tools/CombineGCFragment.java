@@ -1,5 +1,6 @@
 package com.webmyne.paylabas_affiliate.tools;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -88,6 +89,7 @@ public class CombineGCFragment extends Fragment implements View.OnClickListener{
         linearCombineGiftCode = (LinearLayout)convertView.findViewById(R.id.linearCombineGiftCode);
         btnAddCombineGiftCode = (ButtonRectangle)convertView.findViewById(R.id.btnAddCombineGiftCode);
         btnAddCombineGiftCode.setOnClickListener(this);
+        btnAddCombineGiftCode.setTextColor(Color.parseColor("#494949"));
         btnCombineGcCombineGc = (ButtonRectangle)convertView.findViewById(R.id.btnCombineGcCombineGc);
         btnCombineGcCombineGc.setOnClickListener(this);
 

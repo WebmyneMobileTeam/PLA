@@ -4,6 +4,7 @@ package com.webmyne.paylabas_affiliate.giftcode;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -286,6 +287,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
 
         btnGenerateGCGenerateGC.setOnClickListener(this);
         btnResetGenerateGC.setOnClickListener(this);
+        btnResetGenerateGC.setTextColor(Color.parseColor("#494949"));
 
         spinnerRecipientContactGenerateGc = (Spinner)convertView.findViewById(R.id.spinnerRecipientContactGenerateGc);
         spinnerCountryGenerateGc = (Spinner)convertView.findViewById(R.id.spinnerCountryGenerateGc);

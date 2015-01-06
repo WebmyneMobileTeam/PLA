@@ -17,6 +17,7 @@
             android:id="@+id/btnResetGenerateGC"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+
             android:text="Reset"
             android:background="@color/paylabas_grey"
             android:layout_weight="1" />

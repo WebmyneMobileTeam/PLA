@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/back"
-    android:padding="@dimen/activity_margin"
+
     android:layout_height="match_parent"
     tools:context=".Launcher">
 
@@ -12,6 +12,7 @@
 
 
         <LinearLayout
+            android:padding="@dimen/activity_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -49,21 +50,21 @@
                 android:padding="8dp" />
 
 
-            <com.gc.materialdesign.views.ButtonRectangle
-                android:id="@+id/btnCheckPrice"
-                android:layout_width="match_parent"
-                android:textSize="18sp"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:background="@color/paylabas_blue"
-                android:text="Confirm">
 
-            </com.gc.materialdesign.views.ButtonRectangle>
 
         </LinearLayout>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnCheckPrice"
+        android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@color/paylabas_blue"
+        android:text="VERIFY">
+
+    </com.gc.materialdesign.views.ButtonRectangle>
 
 </RelativeLayout>
