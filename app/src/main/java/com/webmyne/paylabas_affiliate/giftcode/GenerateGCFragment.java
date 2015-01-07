@@ -38,11 +38,13 @@ import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.base.DatabaseWrapper;
 import com.webmyne.paylabas_affiliate.base.MyApplication;
 import com.webmyne.paylabas_affiliate.base.MyDrawerActivity;
+import com.webmyne.paylabas_affiliate.base.VerificationActivity;
 import com.webmyne.paylabas_affiliate.custom_components.CircleDialog;
 import com.webmyne.paylabas_affiliate.helpers.AppConstants;
 import com.webmyne.paylabas_affiliate.helpers.CallWebService;
 import com.webmyne.paylabas_affiliate.helpers.ComplexPreferences;
 import com.webmyne.paylabas_affiliate.helpers.FormValidator;
+import com.webmyne.paylabas_affiliate.model.AffilateUser;
 import com.webmyne.paylabas_affiliate.model.Country;
 import com.webmyne.paylabas_affiliate.model.Receipient;
 import com.webmyne.paylabas_affiliate.model.User;
@@ -74,8 +76,6 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
     private ButtonRectangle btnResetGenerateGC;
     private ButtonRectangle btnGenerateGCGenerateGC;
 
-    private User user;
-    private Spinner spinnerRecipientContactGenerateGc;
     private Spinner spinnerCountryGenerateGc;
 
     private ArrayList<Receipient> receipients;
@@ -86,7 +86,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
     private ServiceCharge charge;
     private LinearLayout mainLinear;
     private View viewService;
-
+    private AffilateUser affilateUser;
 
 
     int temp_posCountrySpinner;
@@ -121,16 +121,11 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
     @Override
     public void onResume() {
         super.onResume();
-/*
+
         ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(getActivity(), "user_pref", 0);
-        user = complexPreferences.getObject("current_user", User.class);
-
-        receipients = new ArrayList<Receipient>();
-        countries = new ArrayList<Country>();
-
-      //  fetchReceipientsAndDisplay();
-      //  fetchCountryAndDisplay();
-
+        affilateUser = complexPreferences.getObject("current_user", AffilateUser.class);
+        Log.e("affliate user id",String.valueOf(affilateUser.MerchantID));
+        fetchCountryAndDisplay();
 
         spinnerCountryGenerateGc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -151,27 +146,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
             }
         });
 
-        spinnerRecipientContactGenerateGc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                if(position == 0){
-
-                }else{
-
-                    processSelectionWholeReceipient(position);
-
-
-                }
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });*/
 
     }
 
@@ -225,7 +200,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
 
     }
 
-    private void fetchReceipientsAndDisplay() {
+    /*private void fetchReceipientsAndDisplay() {
 
         new CallWebService(AppConstants.GETRECEIPIENTS +user.UserID,CallWebService.TYPE_JSONARRAY) {
 
@@ -258,7 +233,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
             }
         }.start();
 
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -287,9 +262,8 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
 
         btnGenerateGCGenerateGC.setOnClickListener(this);
         btnResetGenerateGC.setOnClickListener(this);
-        btnResetGenerateGC.setTextColor(Color.parseColor("#494949"));
+        btnResetGenerateGC.setTextColor(Color.parseColor("#ffffff"));
 
-        spinnerRecipientContactGenerateGc = (Spinner)convertView.findViewById(R.id.spinnerRecipientContactGenerateGc);
         spinnerCountryGenerateGc = (Spinner)convertView.findViewById(R.id.spinnerCountryGenerateGc);
 
         txtCCGenerateGC = (TextView)convertView.findViewById(R.id.txtCCGenerateGC);
@@ -429,7 +403,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
                                 final CircleDialog circleDialog=new CircleDialog(getActivity(),0);
                                 circleDialog.setCancelable(true);
                                 circleDialog.show();
-                                String postfix = "/"+user.UserID+"/"+edAmountGenerateGC.getText().toString();
+                                String postfix = "/"+affilateUser.UserID+"/"+edAmountGenerateGC.getText().toString();
                                 new CallWebService(AppConstants.SERVICE_CHARGE+postfix, CallWebService.TYPE_JSONOBJECT) {
 
                                     @Override
@@ -490,10 +464,10 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
     private boolean validateChagresAndDisplay(){
 
         ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(getActivity(), "user_pref", 0);
-        user = complexPreferences.getObject("current_user", User.class);
+        affilateUser = complexPreferences.getObject("current_user", AffilateUser.class);
         boolean isComplete = false;
         double value = Double.parseDouble(edAmountGenerateGC.getText().toString());
-        double user_value = Double.parseDouble(user.LemonwayAmmount);
+        double user_value = Double.parseDouble(affilateUser.LemonwayBal);
 
         if(value<charge.MinLimit){
 
@@ -529,10 +503,10 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
 
     public void refreshBalance(){
 
-        ((MyDrawerActivity)getActivity()).setToolTitle("Hi, "+user.FName);
+        ((MyDrawerActivity)getActivity()).setToolTitle("Hi, "+affilateUser.FName);
         ((MyDrawerActivity)getActivity()).showToolLoading();
 
-        new CallWebService(AppConstants.USER_DETAILS+user.UserID,CallWebService.TYPE_JSONOBJECT) {
+        new CallWebService(AppConstants.USER_DETAILS+affilateUser.UserID,CallWebService.TYPE_JSONOBJECT) {
 
             @Override
             public void response(String response) {
@@ -608,7 +582,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
             generateObject.put("MobileNo",edMobileNumberGenerateGC.getText().toString().trim());
             generateObject.put("ResponseCode","");
             generateObject.put("ResponseMsg","");
-            generateObject.put("SenderID",user.UserID);
+            generateObject.put("SenderID",affilateUser.UserID);
 
             Log.e("gc json obj",generateObject.toString());
 
@@ -633,9 +607,13 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
                             SnackBar bar = new SnackBar(getActivity(),"Gift code generated Successfully");
                             bar.show();
 
-                            processCheckMobileExists();
-                           //  resetAll();
+                            //processCheckMobileExists();
+                            resetAll();
 
+                           /* Intent intent =new Intent(getActivity(),MyDrawerActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
+*/
                           /*  FragmentManager manager = getActivity().getSupportFragmentManager();
                             FragmentTransaction ft = manager.beginTransaction();
                             ft.replace(R.id.main_container,new MyAccountFragment());
@@ -664,7 +642,7 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
                             }else if(responsecode.equalsIgnoreCase("-1")){
                                 errorMSG = "Error";
                             }else if(responsecode.equalsIgnoreCase("2")){
-                                processCheckMobileExists();
+                               // processCheckMobileExists();
                                 errorMSG = "User not Exist with Paylabas";
                             }else if(responsecode.equalsIgnoreCase("3")){
                                 errorMSG = "User will blocked for next 24 hours";
@@ -708,30 +686,6 @@ public class GenerateGCFragment extends Fragment implements TextWatcher,View.OnC
 
         }
     }
-private void processCheckMobileExists(){
-
-
-        if(checkIfExistsOrNot()){
-
-        }else{
-
-             final com.gc.materialdesign.widgets.Dialog alert = new com.gc.materialdesign.widgets.Dialog(getActivity(),"Add Recipient","Would you like to add this contact as your Recipient ?");
-             alert.show();
-
-             alert.setOnAcceptButtonClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    alert.dismiss();
-                   /* Intent i = new Intent(getActivity(), AddRecipientActivity.class);
-
-                    i.putExtra("CountryID",(int)countries.get(temp_posCountrySpinner).CountryID);
-                    i.putExtra("Mobileno",edMobileNumberGenerateGC.getText().toString());
-                    startActivity(i);*/
-
-                }
-            });
-        }
-    }
 
     private boolean checkIfExistsOrNot() {
 
@@ -752,21 +706,7 @@ private void processCheckMobileExists(){
             }
         }
 
-       /* for(Receipient receipient:receipients){
 
-            Log.e("values  ",receipient.MobileNo);
-
-            if(receipient.MobileNo.equalsIgnoreCase(edMobileNumberGenerateGC.getText().toString())){
-                Log.e("if block ","if block");
-                isExists = true;
-                return isExists;
-
-            }else{
-                isExists = false;
-                Log.e("else block ","else block");
-            }
-
-        }*/
         return isExists;
 
     }
@@ -776,7 +716,6 @@ private void processCheckMobileExists(){
         edAmountGenerateGC.setText("");
         edMobileNumberGenerateGC.setText("");
         spinnerCountryGenerateGc.setSelection(0);
-        spinnerRecipientContactGenerateGc.setSelection(0);
         passiveReset();
 
     }
