@@ -72,7 +72,7 @@ public class Launcher extends ActionBarActivity {
             finish();
         }
         etMerchantId.setText("4CF5B52A19");
-        etSecretId.setText("IY6kn$");
+        etSecretId.setText("123456");
         btnLoginNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,7 +151,9 @@ public class Launcher extends ActionBarActivity {
                     Intent intent =new Intent(Launcher.this,VerificationActivity.class);
                     startActivity(intent);
                     finish();
+
                     } else {
+
                     circleDialog.dismiss();
                     SnackBar bar = new SnackBar(Launcher.this, "Network Error\n" +
                             "Please try again");
