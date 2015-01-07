@@ -47,5 +47,8 @@ public class AffilateUser {
     public int StateID;
     @SerializedName("UserID")
     public int UserID;
+    @SerializedName("VerificationCode")
+    public String VerificationCode;
+
 
 }

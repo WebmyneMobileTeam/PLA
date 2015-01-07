@@ -133,8 +133,9 @@ public class Launcher extends ActionBarActivity {
 
             @Override
             public void onResponse(JSONObject jobj) {
+                circleDialog.dismiss();
+                Log.e("response: ",jobj.toString()+"");
                 affilateUser = new GsonBuilder().create().fromJson(jobj.toString(), AffilateUser.class);
-
                 if(affilateUser.ResponseCode.equalsIgnoreCase("1")){
                     //store current user and domain in shared preferences
                     ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(Launcher.this, "user_pref", 0);
@@ -154,7 +155,7 @@ public class Launcher extends ActionBarActivity {
 
                     } else {
 
-                    circleDialog.dismiss();
+
                     SnackBar bar = new SnackBar(Launcher.this, "Network Error\n" +
                             "Please try again");
                     bar.show();

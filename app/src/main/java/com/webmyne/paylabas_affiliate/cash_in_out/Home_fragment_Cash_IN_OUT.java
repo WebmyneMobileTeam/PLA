@@ -14,40 +14,22 @@ import android.view.ViewGroup;
 
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.custom_components.PagerSlidingTabStrip;
+import com.webmyne.paylabas_affiliate.helpers.ComplexPreferences;
+import com.webmyne.paylabas_affiliate.model.AffilateUser;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Home_fragment_Cash_IN_OUT#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class Home_fragment_Cash_IN_OUT extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     PagerSlidingTabStrip tabs;
     public ViewPager pager;
     public MyPagerAdapter adapter;
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Home_fragment_Cash_IN_OUT.
-     */
-    // TODO: Rename and change types and number of parameters
+    private AffilateUser affilateUser;
+    private ArrayList<String> TITLES;
     public static Home_fragment_Cash_IN_OUT newInstance(String param1, String param2) {
         Home_fragment_Cash_IN_OUT fragment = new Home_fragment_Cash_IN_OUT();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -58,11 +40,10 @@ public class Home_fragment_Cash_IN_OUT extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,25 +51,37 @@ public class Home_fragment_Cash_IN_OUT extends Fragment {
         // Inflate the layout for this fragment
 
         View convertView =inflater.inflate(R.layout.fragment_home_fragment__cash__in__out, container, false);
-
         tabs=(PagerSlidingTabStrip)convertView.findViewById(R.id.tabs_cash_in_out);
         pager=(ViewPager)convertView.findViewById(R.id.pager_cash_in_out);
+        final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
+        pager.setPageMargin(pageMargin);
+        return convertView;
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        TITLES=new ArrayList<String>();
+        ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(getActivity(), "user_pref", 0);
+        affilateUser = complexPreferences.getObject("current_user",AffilateUser.class);
 
+        if(!affilateUser.AllowCashIN && affilateUser.AllowCashOut){
+            TITLES.add("CASH OUT");
+        } else if(affilateUser.AllowCashIN && !affilateUser.AllowCashOut){
+            TITLES.add("CASH IN");
+        } else  {
+            TITLES.add("CASH IN");
+            TITLES.add("CASH OUT");
+        }
         adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
         pager.setAdapter(adapter);
         tabs.setViewPager(pager);
-
-        final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
-                .getDisplayMetrics());
-        pager.setPageMargin(pageMargin);
-
-
-        return convertView;
     }
+
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
-        private final String[] TITLES = {"CASH IN","CASH OUT"};
+
+
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -96,12 +89,12 @@ public class Home_fragment_Cash_IN_OUT extends Fragment {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return TITLES[position];
+            return TITLES.get(position);
         }
 
         @Override
         public int getCount() {
-            return TITLES.length;
+            return TITLES.size();
         }
 
         @Override

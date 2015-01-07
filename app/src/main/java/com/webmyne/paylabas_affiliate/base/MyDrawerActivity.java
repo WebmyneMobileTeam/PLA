@@ -24,6 +24,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.helpers.AppUtils;
+import com.webmyne.paylabas_affiliate.helpers.ComplexPreferences;
+import com.webmyne.paylabas_affiliate.model.AffilateUser;
 import com.webmyne.paylabas_affiliate.reports.ReportFragment;
 import com.webmyne.paylabas_affiliate.user_navigation.Aboutus;
 import com.webmyne.paylabas_affiliate.user_navigation.Contactus;
@@ -41,6 +43,7 @@ public class MyDrawerActivity extends ActionBarActivity {
     private ListView leftDrawerList;
     private ArrayAdapter<String> navigationDrawerAdapter;
     private String[] leftSliderData = {"Home", "Tools", "Reports", "About Us", "Contact Us", "How It Works", "FAQ", "Settings", "Logout"};
+    private AffilateUser affilateUser;
 
     private int[] imagelist = {R.drawable.icon_home,
             R.drawable.ic_tool,
@@ -72,6 +75,14 @@ public class MyDrawerActivity extends ActionBarActivity {
 
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(MyDrawerActivity.this, "user_pref", 0);
+        affilateUser = complexPreferences.getObject("current_user",AffilateUser.class);
+
+    }
 
     private void initView() {
         //  btnLogout = (ButtonRectangle)findViewById(R.id.btnLogout);
@@ -194,8 +205,11 @@ public class MyDrawerActivity extends ActionBarActivity {
                         }
                         break;
                     case 8:
+
                         SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
                         preferences.edit().remove("isUserLogin").commit();
+                        SharedPreferences preferences_verify = getSharedPreferences("verify", MODE_PRIVATE);
+                        preferences_verify.edit().remove("isUserVerify").commit();
                         Intent in = new Intent(MyDrawerActivity.this, Launcher.class);
                         startActivity(in);
                         finish();

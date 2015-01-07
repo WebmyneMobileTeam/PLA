@@ -48,6 +48,7 @@
                             android:scaleType="centerCrop" />
 
                     <LinearLayout
+
                         android:id="@+id/linearGiftCode"
                         android:background="@color/color_giftcode_t"
                         android:layout_gravity="bottom"
