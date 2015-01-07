@@ -16,6 +16,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.gc.materialdesign.widgets.SnackBar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -39,6 +44,7 @@ public class Launcher extends ActionBarActivity {
     private EditText etMerchantId,etSecretId;
     private CircleDialog circleDialog;
     private AffilateUser affilateUser;
+    private boolean isLogin=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +56,23 @@ public class Launcher extends ActionBarActivity {
     private void initView(){
         etMerchantId= (EditText) findViewById(R.id.etMerchantId);
         etSecretId= (EditText) findViewById(R.id.etSecretId);
+        btnLoginNext= (TextView) findViewById(R.id.btnLoginNext);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isLogin=false;
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+        isLogin=preferences.getBoolean("isUserLogin",false);
+        if(isLogin==true){
+            Intent intent =new Intent(Launcher.this,VerificationActivity.class);
+            startActivity(intent);
+            finish();
+        }
         etMerchantId.setText("4CF5B52A19");
         etSecretId.setText("IY6kn$");
-
-        btnLoginNext= (TextView) findViewById(R.id.btnLoginNext);
         btnLoginNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,87 +117,64 @@ public class Launcher extends ActionBarActivity {
 
     private void checkMerchentLogin() {
 
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                circleDialog = new CircleDialog(Launcher.this, 0);
-                circleDialog.setCancelable(true);
-                circleDialog.show();
-            }
+        circleDialog = new CircleDialog(Launcher.this, 0);
+        circleDialog.setCancelable(true);
+        circleDialog.show();
+
+        JSONObject requestObject = new JSONObject();
+        try {
+            requestObject.put("MerchantID", etMerchantId.getText().toString().trim() + "");
+            requestObject.put("Password", etSecretId.getText().toString().trim() + "");
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, AppConstants.AFFILATE_LOGIN, requestObject, new Response.Listener<JSONObject>() {
 
             @Override
-            protected Void doInBackground(Void... params) {
-                try {
+            public void onResponse(JSONObject jobj) {
+                affilateUser = new GsonBuilder().create().fromJson(jobj.toString(), AffilateUser.class);
 
-                    JSONObject requestObject = new JSONObject();
-                    requestObject.put("MerchantID", etMerchantId.getText().toString().trim() + "");
-                    requestObject.put("Password", etSecretId.getText().toString().trim() + "");
+                if(affilateUser.ResponseCode.equalsIgnoreCase("1")){
+                    //store current user and domain in shared preferences
+                    ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(Launcher.this, "user_pref", 0);
+                    complexPreferences.putObject("current_user", affilateUser);
+                    complexPreferences.commit();
 
-                    Reader reader = API.callWebservicePost(AppConstants.AFFILATE_LOGIN, requestObject.toString());
+                    // set login true
 
-                    affilateUser = new GsonBuilder().create().fromJson(reader, AffilateUser.class);
+                    SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("isUserLogin",true);
+                    editor.commit();
 
-                    Gson gson = new Gson();
-                    String json = gson.toJson(affilateUser);
-                    Log.e("json",json+"");
-                    if(affilateUser.ResponseCode.equalsIgnoreCase("1")){
-                        handlePostData();
+                    Intent intent =new Intent(Launcher.this,VerificationActivity.class);
+                    startActivity(intent);
+                    finish();
                     } else {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                circleDialog.dismiss();
-                                SnackBar bar = new SnackBar(Launcher.this, "Network Error\n" +
-                                        "Please try again");
-                                bar.show();
-                            }
-                        });
+                    circleDialog.dismiss();
+                    SnackBar bar = new SnackBar(Launcher.this, "Network Error\n" +
+                            "Please try again");
+                    bar.show();
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            circleDialog.dismiss();
-                            SnackBar bar = new SnackBar(Launcher.this, "Network Error\n" +
-                                    "Please try again");
-                            bar.show();
-                        }
-                    });
-
-                }
-                return null;
             }
+        }, new Response.ErrorListener() {
 
             @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
+            public void onErrorResponse(VolleyError error) {
+
                 circleDialog.dismiss();
-            }
-        }.execute();
-    }
 
-    private void handlePostData() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                //store current user and domain in shared preferences
-                ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(Launcher.this, "user_pref", 0);
-                complexPreferences.putObject("current_user", affilateUser);
-                complexPreferences.commit();
+                SnackBar bar = new SnackBar(Launcher.this,"Network Error");
+                bar.show();
 
-                // set login true
-
-                SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putBoolean("isUserLogin",true);
-                editor.commit();
-
-                Intent intent =new Intent(Launcher.this,VerificationActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
+
+        req.setRetryPolicy(new DefaultRetryPolicy(0,0,0));
+
+        MyApplication.getInstance().addToRequestQueue(req);
+
     }
+
 }
