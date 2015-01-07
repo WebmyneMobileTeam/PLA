@@ -63,6 +63,12 @@ public class AppConstants {
     /*********  FTP image download ***********/
     public static final String fileDownloadPath="http://ws-srv-net.in.webmyne.com/applications/Android/RiteWayServices/Images/";
 
+
+    //Affilate Login
+    //Merchant Id 4CF5B52A19
+    //Password IY6kn$
+
+    public static final String AFFILATE_LOGIN=BASE_URL+"Affiliate.svc/json/AffiliateLogin";
 }
 
 
