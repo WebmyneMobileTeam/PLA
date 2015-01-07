@@ -1,6 +1,7 @@
 package com.webmyne.paylabas_affiliate.base;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,11 +17,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.gc.materialdesign.widgets.SnackBar;
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.webmyne.paylabas_affiliate.R;
 import com.webmyne.paylabas_affiliate.custom_components.CircleDialog;
 import com.webmyne.paylabas_affiliate.helpers.API;
 import com.webmyne.paylabas_affiliate.helpers.AppConstants;
+import com.webmyne.paylabas_affiliate.helpers.ComplexPreferences;
 import com.webmyne.paylabas_affiliate.model.AffilateUser;
 import com.webmyne.paylabas_affiliate.model.SendPaymentResponse;
 
@@ -116,7 +119,9 @@ public class Launcher extends ActionBarActivity {
 
                     affilateUser = new GsonBuilder().create().fromJson(reader, AffilateUser.class);
 
-
+                    Gson gson = new Gson();
+                    String json = gson.toJson(affilateUser);
+                    Log.e("json",json+"");
                     if(affilateUser.ResponseCode.equalsIgnoreCase("1")){
                         handlePostData();
                     } else {
@@ -158,6 +163,18 @@ public class Launcher extends ActionBarActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                //store current user and domain in shared preferences
+                ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(Launcher.this, "user_pref", 0);
+                complexPreferences.putObject("current_user", affilateUser);
+                complexPreferences.commit();
+
+                // set login true
+
+                SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("isUserLogin",true);
+                editor.commit();
+
                 Intent intent =new Intent(Launcher.this,VerificationActivity.class);
                 startActivity(intent);
                 finish();
